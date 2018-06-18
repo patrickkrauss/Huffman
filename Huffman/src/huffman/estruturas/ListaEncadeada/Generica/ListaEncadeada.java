@@ -1,4 +1,4 @@
-package br.furb.estruturas.ListaEncadeada.Generica;
+package huffman.estruturas.ListaEncadeada.Generica;
 
 public class ListaEncadeada<T> {
 
@@ -8,7 +8,7 @@ public class ListaEncadeada<T> {
         primeiro = null;
     }
 
-    public NoLista getPrimeiro() {
+    public NoLista<T> getPrimeiro() {
         return primeiro;
     }
 
@@ -26,7 +26,7 @@ public class ListaEncadeada<T> {
         return primeiro == null;
     }
 
-    public NoLista buscar(T value) {  //pq esse metodo falha se o equals nao esta sobreescrito no NoLista
+    public NoLista<T> buscar(T value) {  //pq esse metodo falha se o equals nao esta sobreescrito no NoLista
         NoLista current = primeiro;
         while (current != null) {
             if (current.getInfo() == value)
@@ -62,7 +62,7 @@ public class ListaEncadeada<T> {
         return size;
     }
 
-    public NoLista obterNo(int position) {
+    public NoLista<T> obterNo(int position) {
         if (position < 0)
             throw new IndexOutOfBoundsException("Pocisao nao pode ser negativa");
 
@@ -105,6 +105,10 @@ public class ListaEncadeada<T> {
             preview.setInfo(null);
         }
         primeiro = null;
+    }
+
+    public void setPrimeiro(NoLista<T> primeiro) {
+        this.primeiro = primeiro;
     }
 }
 

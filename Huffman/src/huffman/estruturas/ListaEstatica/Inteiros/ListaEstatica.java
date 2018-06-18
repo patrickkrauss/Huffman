@@ -1,4 +1,4 @@
-package br.furb.estruturas.ListaEstatica.Inteiros;
+package huffman.estruturas.ListaEstatica.Inteiros;
 
 public class ListaEstatica {
 

@@ -1,4 +1,4 @@
-package br.furb.estruturas.Pilhas.Execoes;
+package huffman.estruturas.Pilhas.Execoes;
 
 public class PilhaVaziaException extends RuntimeException {
 

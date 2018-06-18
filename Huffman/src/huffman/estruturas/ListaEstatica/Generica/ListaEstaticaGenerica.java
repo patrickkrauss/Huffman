@@ -1,4 +1,4 @@
-package br.furb.estruturas.ListaEstatica.Generica;
+package huffman.estruturas.ListaEstatica.Generica;
 
 public class ListaEstaticaGenerica<T> {
 

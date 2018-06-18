@@ -1,5 +1,5 @@
-package br.furb.testes;/*
-package trabalho.estruturas_de_dados.ListaEstatica.Generica;
+package huffman.testes.estruturas;/*
+package trabalho.estruturas_de_dados.ListaEstatica.Inteiros;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -8,13 +8,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
 
-class ListaEstaticaGenericaTest {
+class ListaEstaticaTest {
 
-    private ListaEstaticaGenerica<Integer> list;
+    private ListaEstatica list;
 
     @BeforeEach
     void setUp() {
-        list = new ListaEstaticaGenerica<Integer>();
+        list = new ListaEstatica();
         list.inserir(5);
         list.inserir(10);
         list.inserir(15);
@@ -23,7 +23,7 @@ class ListaEstaticaGenericaTest {
 
     @Test
     void testeContrutor() {
-        list = new ListaEstaticaGenerica<Integer>(5, 10, 15, 20, 25, 30);
+        list = new ListaEstatica(5, 10, 15, 20, 25, 30);
         assertEquals("5,10,15,20,25,30", list.toString());
     }
 
@@ -56,7 +56,7 @@ class ListaEstaticaGenericaTest {
 
     @Test
     void testeExecaoRetirar() {
-        list = new ListaEstaticaGenerica<Integer>();
+        list = new ListaEstatica();
         list.inserir(1);
         list.inserir(2);
         list.inserir(3);
@@ -68,17 +68,19 @@ class ListaEstaticaGenericaTest {
         list.inserir(9);
         list.inserir(10);
         list.retirar(2);
-        try{
+        */
+/*try{
             list.retirar(-10);
         }catch (Exception e){
             return;
         }
-        fail("Should have throw an exception");
+        fail("Should have throw an exception");*//*
+
     }
 
     @Test
     void testeInsersaoComRedimensionamento() {
-        list = new ListaEstaticaGenerica<Integer>();
+        list = new ListaEstatica();
         list.inserir(1);
         list.inserir(2);
         list.inserir(3);
@@ -94,20 +96,20 @@ class ListaEstaticaGenericaTest {
         list.inserir(13);
         list.inserir(14);
         list.inserir(15);
-        assertEquals("1,2,3,4,5,6,7,8,9,10,11,12,13,14,15", list.toString());
-        assertEquals(15, list.getTamanho());
+        assertEquals("1,2,3,4,5,6,7,8,9,10,11,12,13,14,15",list.toString());
+        assertEquals(15,list.getTamanho());
     }
 
     @Test
     void testeObterElemento() {
-        assertEquals(new Integer(20), list.obterElemento(3));
+        assertEquals(20,list.obterElemento(3));
     }
 
     @Test
     void testeExecaoObterElemento() {
-        try {
+        try{
             list.obterElemento(5);
-        } catch (Exception e) {
+        }catch (Exception e){
             return;
         }
         fail("Should have throw an exception");
@@ -116,18 +118,12 @@ class ListaEstaticaGenericaTest {
     @Test
     void testeLiberar() {
         list.liberar();
-        assertEquals(true, list.estaVazia());
+        assertEquals(true,list.estaVazia());
     }
 
     @Test
     void testeEstaVazia() {
-        list = new ListaEstaticaGenerica<Integer>();
-        assertEquals(true, list.estaVazia());
-    }
-
-    @Test
-    void testeInverter() {
-        list.inverter();
-        assertEquals(new ListaEstaticaGenerica<Integer>(20,15,10,5).toString(), list.toString());
+        list = new ListaEstatica();
+        assertEquals(true,list.estaVazia());
     }
 }*/

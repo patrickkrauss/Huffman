@@ -1,4 +1,4 @@
-package br.furb.estruturas.Pilhas;
+package huffman.estruturas.Pilhas;
 
 public interface Pilha<T> {
 
@@ -8,4 +8,5 @@ public interface Pilha<T> {
     public boolean estaVazia();
     public void liberar();
 
+    int obterComprimento();
 }

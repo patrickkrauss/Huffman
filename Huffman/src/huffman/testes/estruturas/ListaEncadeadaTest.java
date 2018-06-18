@@ -1,14 +1,14 @@
-package br.furb.testes;/*
-package trabalho.estruturas_de_dados.ListaDuplamenteEncadeada.Generica;
+package huffman.testes.estruturas;/*
+package trabalho.estruturas_de_dados.ListaEncadeada.Generica;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ListaDuplamenteEncadeadaTest {
+class ListaEncadeadaTest {
 
-    private ListaDuplamenteEncadeada<Integer> list;
+    private ListaEncadeada<Integer> list;
 
     private void inserirValoresParaTeste() {
         list.inserir(5);
@@ -19,13 +19,9 @@ class ListaDuplamenteEncadeadaTest {
 
     @BeforeEach
     void setUp() {
-        list = new ListaDuplamenteEncadeada<>();
+        list = new ListaEncadeada<>();
     }
 
-    @Test
-    void testeConstrutor() {
-        assertTrue(list.estaVazia());
-    }
 
     @Test
     void testeInserirUmValor() {
@@ -42,15 +38,15 @@ class ListaDuplamenteEncadeadaTest {
     }
 
     @Test
-    void testeBuscarNaPrimeiraPocisao(){
+    void testeBuscarNaPrimeiraPocisao() {
         inserirValoresParaTeste();
-        assertEquals(new NoListaDupla<>(20),list.buscar(20));
+        assertEquals(new NoLista<>(20), list.buscar(20));
     }
 
     @Test
     void testeBuscarNaMetadeDaLista() {
         inserirValoresParaTeste();
-        assertEquals(new NoListaDupla<>(10), list.buscar(10));
+        assertEquals(new NoLista<>(15), list.buscar(15));
     }
 
     @Test
@@ -63,33 +59,26 @@ class ListaDuplamenteEncadeadaTest {
     void testeRetirarNaPrimeiraPocisao() {
         inserirValoresParaTeste();
         list.retirar(20);
-        assertEquals("15,10,5",list.toString());
+        assertEquals("15,10,5", list.toString());
     }
 
     @Test
     void testeRetirarNaMetadeDaLista() {
         inserirValoresParaTeste();
-        list.retirar(10);
-        assertEquals("20,15,5",list.toString());
-    }
-
-    @Test
-    void testeRetirarNaUltimaPocisao() {
-        inserirValoresParaTeste();
-        list.retirar(5);
-        assertEquals("20,15,10",list.toString());
+        list.retirar(15);
+        assertEquals("20,10,5", list.toString());
     }
 
     @Test
     void testeObterNoNaPrimeiraPocisao() {
         inserirValoresParaTeste();
-        assertEquals(new NoListaDupla<>(20),list.obterNo(0));
+        assertEquals(new NoLista<>(20), list.obterNo(0));
     }
 
     @Test
     void testeObterNoNaUltimaPocisao() {
         inserirValoresParaTeste();
-        assertEquals(new NoListaDupla<>(5),list.obterNo(3));
+        assertEquals(new NoLista<>(5), list.obterNo(3));
     }
 
     @Test
@@ -98,7 +87,7 @@ class ListaDuplamenteEncadeadaTest {
         try {
             list.obterNo(-1);
             fail("Should have throw an exception");
-        }catch (IndexOutOfBoundsException e){
+        } catch (IndexOutOfBoundsException e) {
             return;
         }
     }
@@ -109,20 +98,20 @@ class ListaDuplamenteEncadeadaTest {
         try {
             list.obterNo(10);
             fail("Should have throw an exception");
-        }catch (IndexOutOfBoundsException e){
+        } catch (IndexOutOfBoundsException e) {
             return;
         }
     }
 
     @Test
     void testeObterComprimentoEmListaVazia() {
-        assertEquals(0,list.obterComprimento());
+        assertEquals(0, list.obterComprimento());
     }
 
     @Test
     void testeObterComprimentoEmListaPreenchida() {
         inserirValoresParaTeste();
-        assertEquals(4,list.obterComprimento());
+        assertEquals(4, list.obterComprimento());
     }
 
     @Test
@@ -150,20 +139,15 @@ class ListaDuplamenteEncadeadaTest {
     @Test
     void testeLiberar() {
         inserirValoresParaTeste();
-        NoListaDupla c = list.buscar(20);
-        NoListaDupla b = list.buscar(15);
-        NoListaDupla a = list.buscar(10);
-        NoListaDupla d = list.buscar(5);
+        NoLista c = list.buscar(20);
+        NoLista b = list.buscar(15);
+        NoLista a = list.buscar(10);
+        NoLista d = list.buscar(5);
         list.liberar();
         assertNull(a.getProximo());
-        assertNull(a.getAnterior());
         assertNull(b.getProximo());
-        assertNull(b.getAnterior());
         assertNull(c.getProximo());
-        assertNull(c.getAnterior());
         assertNull(d.getProximo());
-        assertNull(d.getAnterior());
         assertEquals("", list.toString());
     }
-
 }*/

@@ -1,4 +1,4 @@
-package br.furb.estruturas.Filas;
+package huffman.estruturas.Filas;
 
 public interface Fila<T> {
 

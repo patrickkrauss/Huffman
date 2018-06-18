@@ -1,15 +1,16 @@
-package br.furb.testes;/*
-package trabalho.estruturas_de_dados.Pilhas.PilhaLista;
+package huffman.testes.estruturas;/*
+package trabalho.estruturas_de_dados.Pilhas.PilhaVetor;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import trabalho.estruturas_de_dados.Pilhas.Execoes.PilhaCheiaException;
 import trabalho.estruturas_de_dados.Pilhas.Execoes.PilhaVaziaException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class PilhaListaTest {
+class PilhaVetorTest {
 
-    private PilhaLista<Integer> pilha;
+    private PilhaVetor<Integer> pilha;
 
     private void inserirValoresParaTeste() {
         pilha.push(10);
@@ -19,7 +20,7 @@ class PilhaListaTest {
 
     @BeforeEach
     void setUp() {
-        pilha = new PilhaLista<>();
+        pilha = new PilhaVetor<>(5);
     }
 
     @Test
@@ -43,6 +44,20 @@ class PilhaListaTest {
     }
 
     @Test
+    void testeExecaoPilhaCheia() {
+        pilha = new PilhaVetor<>(3);
+        pilha.push(10);
+        pilha.push(20);
+        pilha.push(30);
+        try {
+            pilha.push(40);
+            fail("Should have throw an exception");
+        } catch (PilhaCheiaException e) {
+            return;
+        }
+    }
+
+    @Test
     void testeExecaoPilhaVazia() {
         try {
             pilha.pop();
@@ -56,7 +71,6 @@ class PilhaListaTest {
     void testePeek() {
         inserirValoresParaTeste();
         assertEquals(new Integer(30), pilha.peek());
-        assertEquals("30,20,10", pilha.toString());
     }
 
     @Test
@@ -71,6 +85,19 @@ class PilhaListaTest {
         inserirValoresParaTeste();
         pilha.liberar();
         assertTrue(pilha.estaVazia());
+    }
+
+    @Test
+    void testeContatenacao() {
+        inserirValoresParaTeste();
+        PilhaVetor<Integer> pilhaAuxiliar = new PilhaVetor<Integer>(2);
+        pilhaAuxiliar.push(40);
+        pilhaAuxiliar.push(50);
+
+        pilha.concatenar(pilhaAuxiliar);
+
+        assertEquals("50,40,30,20,10", pilha.toString());
+        assertEquals("50,40", pilhaAuxiliar.toString());
     }
 
     @Test

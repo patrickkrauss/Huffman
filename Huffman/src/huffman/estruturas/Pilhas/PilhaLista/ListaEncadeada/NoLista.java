@@ -1,4 +1,4 @@
-package br.furb.estruturas.Pilhas.PilhaLista.ListaEncadeada;
+package huffman.estruturas.Pilhas.PilhaLista.ListaEncadeada;
 
 import java.util.Objects;
 

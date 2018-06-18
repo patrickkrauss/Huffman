@@ -1,9 +1,9 @@
-package br.furb.estruturas.Filas.FilaLista;
+package huffman.estruturas.Filas.FilaLista;
 
 
-import trabalho.estruturas_de_dados.Filas.Execoes.FilaVaziaException;
-import trabalho.estruturas_de_dados.Filas.Fila;
-import trabalho.estruturas_de_dados.Filas.FilaLista.ListaEncadeadaAdptadaParaFila.ListaEncadeada;
+import huffman.estruturas.Filas.Execoes.FilaVaziaException;
+import huffman.estruturas.Filas.Fila;
+import huffman.estruturas.Filas.FilaLista.ListaEncadeadaAdptadaParaFila.ListaEncadeada;
 
 public class FilaLista<T> implements Fila<T> {
 

@@ -1,6 +1,6 @@
-package br.furb.estruturas.ListaEncadeada.Generica;
+package huffman.estruturas.ListaEncadeada.Generica;
 
-class NoLista<T> {
+public class NoLista<T> {
 
     private T info;
     private NoLista proximo;

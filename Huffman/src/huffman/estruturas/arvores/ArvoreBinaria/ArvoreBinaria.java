@@ -1,4 +1,4 @@
-package br.furb.estruturas.arvores.ArvoreBinaria;
+package huffman.estruturas.arvores.ArvoreBinaria;
 
 public class ArvoreBinaria<T> {
 
@@ -60,4 +60,7 @@ public class ArvoreBinaria<T> {
         return quantidade;
     }
 
+    public NoArvoreBinaria<T> getRaiz() {
+        return raiz;
+    }
 }

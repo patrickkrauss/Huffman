@@ -1,9 +1,9 @@
-package br.furb.estruturas.Pilhas.PilhaLista;
+package huffman.estruturas.Pilhas.PilhaLista;
 
 
-import trabalho.estruturas_de_dados.Pilhas.Execoes.PilhaVaziaException;
-import trabalho.estruturas_de_dados.Pilhas.Pilha;
-import trabalho.estruturas_de_dados.Pilhas.PilhaLista.ListaEncadeada.ListaEncadeada;
+import huffman.estruturas.ListaEncadeada.Generica.ListaEncadeada;
+import huffman.estruturas.Pilhas.Execoes.PilhaVaziaException;
+import huffman.estruturas.Pilhas.Pilha;
 
 public class PilhaLista<T> implements Pilha<T> {
 
@@ -41,6 +41,11 @@ public class PilhaLista<T> implements Pilha<T> {
     @Override
     public void liberar() {
         lista.liberar();
+    }
+
+    @Override
+    public int obterComprimento() {
+        return lista.obterComprimento();
     }
 
     @Override

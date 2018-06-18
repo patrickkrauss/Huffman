@@ -1,4 +1,4 @@
-package br.furb.estruturas.arvores.ArvoreBinaria;
+package huffman.estruturas.arvores.ArvoreBinaria;
 
 public class NoArvoreBinaria<T> {
 

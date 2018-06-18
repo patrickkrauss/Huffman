@@ -1,4 +1,4 @@
-package br.furb.estruturas.ListaDuplamenteEncadeada.Generica;
+package huffman.estruturas.ListaDuplamenteEncadeada.Generica;
 
 
 import java.util.Objects;

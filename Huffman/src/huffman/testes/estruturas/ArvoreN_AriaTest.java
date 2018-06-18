@@ -1,7 +1,7 @@
-package br.furb.testes;
+package huffman.testes.estruturas;
 
-import br.furb.estruturas.arvores.ArvoreN_Aria.Arvore;
-import br.furb.estruturas.arvores.ArvoreN_Aria.NoArvore;
+import huffman.estruturas.arvores.ArvoreN_Aria.Arvore;
+import huffman.estruturas.arvores.ArvoreN_Aria.NoArvore;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

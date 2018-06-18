@@ -1,5 +1,5 @@
 
-package br.furb.estruturas.arvores.ArvoreN_Aria;
+package huffman.estruturas.arvores.ArvoreN_Aria;
 
 public class NoArvore<T> {
 

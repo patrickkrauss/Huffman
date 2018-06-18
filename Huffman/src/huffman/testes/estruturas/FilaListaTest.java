@@ -1,14 +1,15 @@
-package br.furb.testes;/*
-package trabalho.estruturas_de_dados.Filas.FilaVetor;
+package huffman.testes.estruturas;/*
+package trabalho.estruturas_de_dados.Filas.FilaLista;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import trabalho.estruturas_de_dados.Filas.Execoes.FilaVaziaException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class FilaVetorTest {
+class FilaListaTest {
 
-    private FilaVetor<Integer> fila;
+    private FilaLista<Integer> fila;
 
     private void inserirValoresParaTeste() {
         fila.inserir(10);
@@ -18,7 +19,7 @@ class FilaVetorTest {
 
     @BeforeEach
     void setUp() {
-        fila = new FilaVetor<>(5);
+        fila = new FilaLista<>();
     }
 
     @Test
@@ -39,20 +40,6 @@ class FilaVetorTest {
         assertEquals(new Integer(20), fila.retirar());
         assertEquals(new Integer(30), fila.retirar());
         assertTrue(fila.estaVazia());
-    }
-
-    @Test
-    void testeExecaofilaCheia() {
-        fila = new FilaVetor<>(3);
-        fila.inserir(10);
-        fila.inserir(20);
-        fila.inserir(30);
-        try {
-            fila.inserir(40);
-            fail("Should have throw an exception");
-        } catch (FilaCheiaException e) {
-            return;
-        }
     }
 
     @Test
@@ -85,15 +72,6 @@ class FilaVetorTest {
         assertTrue(fila.estaVazia());
     }
 
-    @Test
-    void testeContatenacao() {
-        inserirValoresParaTeste();
-        FilaVetor<Integer> filaAuxiliar = new FilaVetor<Integer>(2);
-        filaAuxiliar.inserir(40);
-        filaAuxiliar.inserir(50);
-
-        assertEquals("10,20,30,40,50", fila.criarFilaContatenada(filaAuxiliar).toString());
-    }
 
     @Test
     void testeToString() {

@@ -1,8 +1,8 @@
-package br.furb.estruturas.Pilhas.PilhaVetor;
+package huffman.estruturas.Pilhas.PilhaVetor;
 
-import trabalho.estruturas_de_dados.Pilhas.Execoes.PilhaCheiaException;
-import trabalho.estruturas_de_dados.Pilhas.Execoes.PilhaVaziaException;
-import trabalho.estruturas_de_dados.Pilhas.Pilha;
+import huffman.estruturas.Pilhas.Execoes.PilhaCheiaException;
+import huffman.estruturas.Pilhas.Execoes.PilhaVaziaException;
+import huffman.estruturas.Pilhas.Pilha;
 
 public class PilhaVetor<T> implements Pilha<T> {
 
@@ -50,6 +50,11 @@ public class PilhaVetor<T> implements Pilha<T> {
             info[i] = null;
         }
         tamanho = 0;
+    }
+
+    @Override
+    public int obterComprimento() {
+        return tamanho;
     }
 
     @Override

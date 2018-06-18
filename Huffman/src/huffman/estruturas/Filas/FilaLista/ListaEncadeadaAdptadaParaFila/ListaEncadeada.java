@@ -1,4 +1,4 @@
-package br.furb.estruturas.Filas.FilaLista.ListaEncadeadaAdptadaParaFila;
+package huffman.estruturas.Filas.FilaLista.ListaEncadeadaAdptadaParaFila;
 
 public class ListaEncadeada<T> {
 

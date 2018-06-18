@@ -1,8 +1,8 @@
-package br.furb.estruturas.Filas.FilaVetor;
+package huffman.estruturas.Filas.FilaVetor;
 
-import trabalho.estruturas_de_dados.Filas.Execoes.FilaCheiaException;
-import trabalho.estruturas_de_dados.Filas.Execoes.FilaVaziaException;
-import trabalho.estruturas_de_dados.Filas.Fila;
+import huffman.estruturas.Filas.Execoes.FilaCheiaException;
+import huffman.estruturas.Filas.Execoes.FilaVaziaException;
+import huffman.estruturas.Filas.Fila;
 
 public class FilaVetor<T> implements Fila<T> {
 

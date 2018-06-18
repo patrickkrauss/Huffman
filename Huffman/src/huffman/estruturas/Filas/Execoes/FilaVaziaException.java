@@ -1,4 +1,4 @@
-package br.furb.estruturas.Filas.Execoes;
+package huffman.estruturas.Filas.Execoes;
 
 public class FilaVaziaException extends RuntimeException {
 

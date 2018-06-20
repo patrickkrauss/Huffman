@@ -13,18 +13,18 @@ public class HuffmanCompacter {
 
     private ListaEncadeada<IHuffmanChar> caracteres;
     private ArvoreBinaria<IHuffmanChar> arvore;
-    private int qtChar;
 
     private StringBuilder compactedSB = new StringBuilder();
 
     private HuffmanCompacter(String text) {
-        qtChar = text.length();
-        startCaracteres(text);
-        sort(caracteres);
-        startTree();
-        encode();
-        startHeader();
-        compact(text);
+        if (text != null && !text.equals("")){
+            startCaracteres(text);
+            sort(caracteres);
+            startTree();
+            encode();
+            startHeader();
+            compact(text);
+        }
     }
 
     public static HuffmanCompacter getInstance(String text) {
@@ -37,7 +37,7 @@ public class HuffmanCompacter {
 
     private void startHeader() {
         Comparator<IHuffmanChar> comparator;
-        comparator = Comparator.comparingInt(iHuffmanChar -> Integer.valueOf(iHuffmanChar.getCode()));
+        comparator = Comparator.comparingDouble(iHuffmanChar -> Double.valueOf(iHuffmanChar.getCode()));
         HuffmanUtils.sort(caracteres, comparator);
         compactedSB.append(caracteres.obterComprimento()).append("\n");
         NoLista<IHuffmanChar> atual = caracteres.getPrimeiro();
@@ -51,7 +51,7 @@ public class HuffmanCompacter {
     private void compact(String text) {
         char[] charVector = text.toCharArray();
         for (int i = 0; i < charVector.length; i++) {
-            Character c = charVector[i];
+            char c = charVector[i];
             NoLista<IHuffmanChar> atual = caracteres.getPrimeiro();
             while (atual.getInfo().getChar() != c){
                 atual = atual.getProximo();
@@ -61,7 +61,12 @@ public class HuffmanCompacter {
     }
 
     private void encode() {
-        enconde(arvore.getRaiz(), "");
+
+        if (caracteres.getPrimeiro().getProximo() == null){
+            enconde(arvore.getRaiz(), "0");
+        } else {
+            enconde(arvore.getRaiz(), "");
+        }
     }
 
     private static void enconde(NoArvoreBinaria<IHuffmanChar> no, String code) {

@@ -13,8 +13,10 @@ public class HuffmanDecompacter {
     private StringBuilder sb = new StringBuilder();
 
     private HuffmanDecompacter(String text) {
-        creatTree(extractTable(text));
-        decompact(extractBool(text));
+        if (text != null && !text.equals("")) {
+            creatTree(extractTable(text));
+            decompact(extractBool(text));
+        }
     }
 
     private void decompact(String bool) {

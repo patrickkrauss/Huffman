@@ -19,7 +19,6 @@ public class HuffmanCompacter {
 
     private HuffmanCompacter(String text) {
         if (text != null && !text.equals("")){
-            qtChar = text.length();
             startCaracteres(text);
             sort(caracteres);
             startTree();

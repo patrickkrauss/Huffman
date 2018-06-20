@@ -1,11 +1,11 @@
-package br.furb;
+package huffman;
 
-import br.furb.estruturas.ListaEncadeada.Generica.ListaEncadeada;
-import br.furb.estruturas.ListaEncadeada.Generica.NoLista;
-import br.furb.estruturas.arvores.ArvoreBinaria.ArvoreBinaria;
-import br.furb.estruturas.arvores.ArvoreBinaria.NoArvoreBinaria;
-import br.furb.interfaces.IHuffmanChar;
-import br.furb.interfaces.TextFile;
+import huffman.estruturas.ListaEncadeada.Generica.ListaEncadeada;
+import huffman.estruturas.ListaEncadeada.Generica.NoLista;
+import huffman.estruturas.arvores.ArvoreBinaria.ArvoreBinaria;
+import huffman.estruturas.arvores.ArvoreBinaria.NoArvoreBinaria;
+import huffman.interfaces.IHuffmanChar;
+import huffman.interfaces.TextFile;
 
 public class HuffmanDecompacter {
 

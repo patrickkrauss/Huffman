@@ -13,7 +13,6 @@ public class HuffmanCompacter {
 
     private ListaEncadeada<IHuffmanChar> caracteres;
     private ArvoreBinaria<IHuffmanChar> arvore;
-    private int qtChar;
 
     private StringBuilder compactedSB = new StringBuilder();
 

@@ -22,6 +22,7 @@ class HuffmanTest {
             "\n111000110010111011010110011100011110001";
 
     private static final String LOREM = "Tem que colocar um dilmes ipsum aqui pra testes futuros\nnovalinha\ttab";
+    private static final String teste1 = "paçoca blá blê      !@#$\n   paçõcão";
 
     @BeforeEach
     void setUp() {
@@ -54,6 +55,19 @@ class HuffmanTest {
         String decompacted = decompacter.getDecompactedText();
         System.out.println(decompacted);
         assertEquals(LOREM, decompacted);
+    }
+
+
+    @Test
+    void teste1() {
+        HuffmanCompacter compacter = HuffmanCompacter.getInstance(teste1);
+        System.out.println(teste1);
+        String compacted = compacter.getCompactedText();
+        System.out.println(compacted);
+        HuffmanDecompacter decompacter = HuffmanDecompacter.getInstance(compacted);
+        String decompacted = decompacter.getDecompactedText();
+        System.out.println(decompacted);
+        assertEquals(teste1, decompacted);
     }
 
     @Test

@@ -5,6 +5,13 @@
  */
 package huffman.UI;
 
+import huffman.HuffmanCompacter;
+import huffman.HuffmanDecompacter;
+import huffman.HuffmanUtils;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
@@ -184,13 +191,28 @@ public class UI extends javax.swing.JFrame {
     }//GEN-LAST:event_formFocusGained
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if(txtArquivoDestino.getText().isEmpty()|| txtArquivoOrigem.getText().isEmpty()){
+            JOptionPane.showMessageDialog(rootPane, "É necessário preecher os campos de arquivos");
+            return;
+        }
+        
         if (!rbCompactar.isSelected() && !rbDescompactar.isSelected()) {
             JOptionPane.showMessageDialog(rootPane, "É necessário selecionar compactar ou descompactar");
         } else {
             if (rbCompactar.isSelected()) {
-                //do spiess metodo
+                File f = new File(txtArquivoDestino.getText());
+                try {
+                    HuffmanUtils.writeFile(HuffmanCompacter.getInstance(HuffmanUtils.readFile(txtArquivoOrigem.getText())).getCompactedText(), f);
+                } catch (IOException ex) {
+                    Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
+                }
             } else {
-                //do spiess metodo
+                File f2 = new File(txtArquivoDestino.getText());
+                try {
+                    HuffmanUtils.writeFile(HuffmanDecompacter.getInstance(HuffmanUtils.readFile(txtArquivoOrigem.getText())).getDecompactedText(), f2);
+                } catch (IOException ex) {
+                    Logger.getLogger(UI.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed

@@ -35,7 +35,7 @@ public class HuffmanUtils {
 
         try {
             texto = "";
-            br = new BufferedReader(new InputStreamReader(new FileInputStream(filePath), Charset.defaultCharset()));
+            br = new BufferedReader(new InputStreamReader(new FileInputStream(filePath), Charset.forName("ISO_8859_1")));
             while ((linha = br.readLine()) != null) {
                 texto += linha;
                 texto += "\n";

@@ -3,12 +3,14 @@ package huffman;
 
 import huffman.estruturas.ListaEncadeada.Generica.ListaEncadeada;
 import huffman.estruturas.ListaEncadeada.Generica.NoLista;
+import huffman.interfaces.TextFile;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.List;
 
 public class HuffmanUtils {
 
@@ -31,7 +33,7 @@ public class HuffmanUtils {
         }
     }
 
-    public static String readFile(String filePath) {
+    /*public static String readFile(String filePath) {
 
         String line = "";
         String result = "";
@@ -50,6 +52,24 @@ public class HuffmanUtils {
             ex.printStackTrace();
         }
         return result;
+    }*/
+
+    public static TextFile readFile(String filePath)  {
+        List<String> LINES = null;
+        try {
+            LINES = Files.readAllLines(Paths.get(filePath));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        List<String> finalLINES = LINES;
+        return new TextFile() {
+            @Override
+            public String getText() {
+                StringBuilder sb = new StringBuilder();
+                finalLINES.forEach(l->sb.append(l));
+                return  sb.toString();
+            }
+        };
     }
 
     public static void writeFile(String text, File f) throws IOException {
@@ -74,7 +94,7 @@ public class HuffmanUtils {
         });
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         String s = Paths.get("").toAbsolutePath() + "/teste";
 
         try {
@@ -83,7 +103,7 @@ public class HuffmanUtils {
             e.printStackTrace();
         }
         System.out.println("---------------------");
-        System.out.println(readFile(s));
+        System.out.println(readFile(s).getText());
         /*try {
             System.out.println(readFile(Paths.get("/").toFile()).getText());
             writeFile("asdfasdf", Paths.get("temp.txt").toFile());

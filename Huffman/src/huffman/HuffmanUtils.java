@@ -28,14 +28,14 @@ public class HuffmanUtils {
         }
     }
 
-    public static String readFile(String filePath){
+    public static String readFile(String filePath) {
         String texto;
         String linha;
         BufferedReader br;
 
         try {
             texto = "";
-            br = new BufferedReader(new InputStreamReader(new FileInputStream(filePath), Charset.forName("ISO_8859_1")));
+            br = new BufferedReader(new InputStreamReader(new FileInputStream(filePath), Charset.defaultCharset()));
             while ((linha = br.readLine()) != null) {
                 texto += linha;
                 texto += "\n";

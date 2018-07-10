@@ -30,14 +30,6 @@ public class NoLista<T> {
         return info.toString();
     }
 
-    @Override
-    protected void finalize() throws Throwable {
-        // Invoke the finalizer of our superclass
-        // We haven't discussed superclasses or this syntax yet
-        System.out.println("dead: " + toString());
-        super.finalize();
-    }
-
     /*@Override
     public boolean equals(Object o) {
         if (this == o) return true;
